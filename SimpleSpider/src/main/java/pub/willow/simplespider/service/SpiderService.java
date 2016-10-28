@@ -61,11 +61,6 @@ public class SpiderService {
 
 		HttpResponse httpResponse = client.execute(httpGet);
 		int statusCode = httpResponse.getStatusLine().getStatusCode();
-		System.out.println("status code->" + statusCode);
-		Header[] hs = httpResponse.getAllHeaders();
-		for(Header h:hs) {
-			System.out.println(h.getName() + " -> " + h.getValue());
-		}
 		
 		if (statusCode == HttpStatus.SC_OK) {
 			InputStream is = httpResponse.getEntity().getContent();
@@ -128,7 +123,7 @@ public class SpiderService {
 	 * @throws IOException
 	 */
 	public String getResponseBodyAsString(InputStream is, String charset) throws IOException {
-		//InputStream gzin = new GZIPInputStream(is);
+		InputStream gzin = new GZIPInputStream(is);
 
 		return getSourceByCharset(is, charset);
 	}
