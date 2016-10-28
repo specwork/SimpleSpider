@@ -36,7 +36,7 @@ public class SpiderService {
 //		httpGet.setHeader("User-Agent", "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:28.0) Gecko/20100101 Firefox/28.0");
 //		httpGet.setHeader("Connection", "keep-alive");
 //		httpGet.setHeader("Accept-Language", "zh-cn,zh;q=0.8,en-us;q=0.5,en;q=0.3");
-//		httpGet.setHeader("Accept-Encoding", "gzip, deflate");
+//		httpGet.setHeader("Accept-Encoding", "gzip");
 //
 //		httpGet.setHeader("Connection","keep-alive");
 //		httpGet.setHeader("Q-UA2","QV=3&PL=ADR&PR=WX&PP=com.tencent.mm&PPVN=6.3.27&TBSVC=36803&CO=BK&COVC=036849&PB=GE&VE=GA&DE=PHONE&CHID=0&LCID=9422&MO= M351 &RL=1080*1800&OS=4.4.4&API=19");
@@ -125,7 +125,7 @@ public class SpiderService {
 	public String getResponseBodyAsString(InputStream is, String charset) throws IOException {
 		InputStream gzin = new GZIPInputStream(is);
 
-		return getSourceByCharset(is, charset);
+		return getSourceByCharset(gzin, charset);
 	}
 
 	public static void saveFile(String text, String url) {

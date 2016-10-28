@@ -70,7 +70,7 @@ public class SimpleSpiderBean {
 				put("User-Agent", "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:28.0) Gecko/20100101 Firefox/28.0");
 				put("Connection", "keep-alive");
 				put("Accept-Language", "zh-cn,zh;q=0.8,en-us;q=0.5,en;q=0.3");
-				put("Accept-Encoding", "gzip, deflate");
+				put("Accept-Encoding", "gzip");
 			}
 		};
 		return defaultHeaders;
